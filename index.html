@@ -3,6 +3,19 @@
   <head>
     <title>Service Worker 101</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/serviceworker.js').then(function(registration) {
+        // Registration was successful
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }).catch(function(err) {
+        // registration failed :(
+        console.log('ServiceWorker registration failed: ', err);
+      });
+    }
+    </script>
+
   </head>
   <body>
     Hello world, it's a ServiceWorker!
